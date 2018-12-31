@@ -1,6 +1,6 @@
 {
   "name": "cordova-network-interceptor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "network interceptor for cordova app that will fix all protocol relative url requests to use https",
   "main": "dist/index.js",
   "scripts": {

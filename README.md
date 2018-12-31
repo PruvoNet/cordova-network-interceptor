@@ -3,7 +3,8 @@
 # cordova-network-interceptor
 Network interceptor for cordova app that will fix all protocol relative url requests to use https
 
-Cordova is essentially a web view that serves files from the file system. As such, the protocl of the "url" it uses is `file:` (e.g. `file://android_assets/www/index.html`).  
+Cordova is essentially a web view that serves files from the file system. As such, the protocl of the "url" it uses is `file:` (e.g. `file://android_assets/www/index.html`).   
+  
 It is a common practice when writing modules, to reference urls to be used using the "relative protocol" `//` (e.g. `//www.googleapis.com/widget.js`).   
 
 In cordova, this causes the url to be fetched with the `file:` protocol, which causes faliures and unloaded external libraries.   
