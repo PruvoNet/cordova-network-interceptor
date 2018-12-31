@@ -1,12 +1,14 @@
 [![Build Status](https://travis-ci.org/regevbr/cordova-network-interceptor.svg?branch=master)](https://travis-ci.org/regevbr/cordova-network-interceptor)
 
 # cordova-network-interceptor
-network interceptor for cordova app that will fix all protocol relative url requests to use https
+Network interceptor for cordova app that will fix all protocol relative url requests to use https
 
-Cordova is essentially a web view that serves files from the file system. As such, the protocl of the "url" it uses is `file:` (e.g. `file://android_assets/www/index.html`).
-It is a common practice when writing modules, to reference urls to be used using the "relative protocol" `//` (e.g. `//www.googleapis.com/widget.js`).
-In cordova, this causes the url to be fetched with the `file:` protocol, which causes faliures and unloaded external libraries.
-For example,  `//www.googleapis.com/widget.js` will be translated to  `file://www.googleapis.com/widget.js`.
+Cordova is essentially a web view that serves files from the file system. As such, the protocl of the "url" it uses is `file:` (e.g. `file://android_assets/www/index.html`).  
+It is a common practice when writing modules, to reference urls to be used using the "relative protocol" `//` (e.g. `//www.googleapis.com/widget.js`).   
+
+In cordova, this causes the url to be fetched with the `file:` protocol, which causes faliures and unloaded external libraries.   
+For example,  `//www.googleapis.com/widget.js` will be translated to  `file://www.googleapis.com/widget.js`.   
+
 To overcome the issue, the library will monkey patch a few things to force the urls to be using the `https:` protocol.
 
 The library performs 4 operations:
@@ -16,10 +18,13 @@ The patch will alter the script `src` property if needed to use a proper protoco
 3. Patch the `XMLHttpRequest` object, to alter the url if needed to use a proper protocol, before the request is being executed.
 4. Patch the `fetch` API, to alter the url if needed to use a proper protocol, before the request is being executed.
 
-So if any script, no matter how fetched and when, will use `//www.googleapis.com/widget.js` as its source, it will be translated and fetched by `https://www.googleapis.com/widget.js`.
+So, for example, if any script, no matter how fetched and when, will use `//www.googleapis.com/widget.js` as its source, it will be translated and fetched by the `https://www.googleapis.com/widget.js` correct url.
 ## Installation 
 ```sh
 npm install cordova-network-interceptor --save
+```
+or
+```sh
 yarn add cordova-network-interceptor
 ```
 ## Usage
