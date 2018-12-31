@@ -1,0 +1,36 @@
+{
+  "name": "cordova-network-interceptor",
+  "version": "1.0.0",
+  "description": "network interceptor for cordova app that will fix all protocol relative url requests to use https",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regevbr/cordova-network-interceptor.git"
+  },
+  "keywords": [
+    "cordova",
+    "interceptor",
+    "file",
+    "plugin",
+    "network",
+    "protocol",
+    "relative",
+    "request",
+    "javascript"
+  ],
+  "author": "Regev Brody <regevbr@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/regevbr/cordova-network-interceptor/issues"
+  },
+  "homepage": "https://github.com/regevbr/cordova-network-interceptor#readme",
+  "devDependencies": {
+    "@types/node": "^10.3.2",
+    "ts-node": "^6.1.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {}
+}
